@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Train extends Model
 {
     use HasFactory;
+    protected $dates = ['departures_schedule', 'arrivals_schedule'];
 }

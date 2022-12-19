@@ -21,8 +21,8 @@
            <tbody>
                @foreach ($today_trains as $todays_train)
                <tr>
-                   <td>{{$todays_train->departures_schedule}}</td>
-                   <td>{{$todays_train->arrivals_schedule}}</td>
+                   <td>{{$todays_train->departures_schedule->format('H:i d/m/y')}}</td>
+                   <td>{{$todays_train->arrivals_schedule->format('H:i d/m/y')}}</td>
                    <td>{{$todays_train->departure_station}}</td>
                    <td>{{$todays_train->arrival_station}}</td>
                    <td>{{$todays_train->train_code}}</td>

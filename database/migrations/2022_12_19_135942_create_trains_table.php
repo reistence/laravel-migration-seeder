@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('company', 50);
             $table->string('departure_station', 80);
             $table->string('arrival_station', 80);
-            $table->dateTime('departures_schedule');
+            $table->dateTime('departures_schedule')->format('hh:mm');
             $table->dateTime('arrivals_schedule');
             $table->integer('train_code')->unsigned();
             $table->integer('coaches_nr')->unsigned();

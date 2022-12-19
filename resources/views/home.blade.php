@@ -20,13 +20,13 @@
            <tbody>
                @foreach ($trains as $train)
                <tr>
-                   <td>{{$train->departures_schedule}}</td>
-                   <td>{{$train->arrivals_schedule}}</td>
+                   <td>{{$train->departures_schedule->format('H:i d/m/y')}}</td>
+                   <td>{{$train->arrivals_schedule->format('H:i d/m/y')}}</td>
                    <td>{{$train->departure_station}}</td>
                    <td>{{$train->arrival_station}}</td>
                    <td>{{$train->train_code}}</td>
                    <td>{{$train->on_schedule}}</td>
-                   <td>{{$train->canceled}}</td>
+                   <td>{{$train->canceled }}</td>
                    <td>{{$train->coaches_nr}}</td>
                </tr>
                    
