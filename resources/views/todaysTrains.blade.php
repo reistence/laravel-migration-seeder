@@ -26,8 +26,16 @@
                    <td>{{$todays_train->departure_station}}</td>
                    <td>{{$todays_train->arrival_station}}</td>
                    <td>{{$todays_train->train_code}}</td>
-                   <td>{{$todays_train->on_schedule}}</td>
-                   <td>{{$todays_train->canceled}}</td>
+                   @if ($todays_train->on_schedule === 0)
+                   <td>Delayed</td> 
+                   @else
+                   <td>No Delays</td> 
+                   @endif
+                   @if ($todays_train->canceled === 0)
+                   <td>No</td> 
+                   @else
+                   <td>Yes</td> 
+                   @endif
                    <td>{{$todays_train->coaches_nr}}</td>
                </tr>
                    
