@@ -14,7 +14,7 @@ class PageController extends Controller
     }
 
     public function showNext(){
-        $next_trains = Train::where('departures_schedule', '>=',now())->get();
+        $next_trains = Train::where('departures_schedule', '>=',now())->oldest('departures_schedule')->get();
         return view('nextTrains', compact('next_trains'));
     }
 }
