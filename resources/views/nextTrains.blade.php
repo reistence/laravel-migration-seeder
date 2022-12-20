@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="container">
-        <h1>Our Trains</h1>
+        <h1>Next available trains:</h1>
         <table>
            <thead>
                <tr>

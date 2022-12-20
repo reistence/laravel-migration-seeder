@@ -3,7 +3,7 @@
     @section('title', 'All Trains')
     @section('content')
     <div class="container">
-        <h1>Our Trains</h1>
+        <h1>All Trains</h1>
         <table>
            <thead>
                <tr>
