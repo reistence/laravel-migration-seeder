@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index']);
-Route::get('/todaysTrains', [PageController::class, 'showToday']);
+Route::get('/nextTrains', [PageController::class, 'showNext']);

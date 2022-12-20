@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-    @section('title', "Today's Trains")
+    @section('title', "Next Trains")
 
 @section('content')
   <div class="container">
@@ -16,27 +16,29 @@
                    <th>On Time</th>
                    <th>Canceled</th>
                    <th>Coaches</th>
+                   <th>Company</th>
                </tr>
            </thead>
            <tbody>
-               @foreach ($today_trains as $todays_train)
+               @foreach ($next_trains as $next_train)
                <tr>
-                   <td>{{$todays_train->departures_schedule->format('H:i d/m/y')}}</td>
-                   <td>{{$todays_train->arrivals_schedule->format('H:i d/m/y')}}</td>
-                   <td>{{$todays_train->departure_station}}</td>
-                   <td>{{$todays_train->arrival_station}}</td>
-                   <td>{{$todays_train->train_code}}</td>
-                   @if ($todays_train->on_schedule === 0)
+                   <td>{{$next_train->departures_schedule->format('H:i d/m/y')}}</td>
+                   <td>{{$next_train->arrivals_schedule->format('H:i d/m/y')}}</td>
+                   <td>{{$next_train->departure_station}}</td>
+                   <td>{{$next_train->arrival_station}}</td>
+                   <td>{{$next_train->train_code}}</td>
+                   @if ($next_train->on_schedule === 0)
                    <td>Delayed</td> 
                    @else
                    <td>No Delays</td> 
                    @endif
-                   @if ($todays_train->canceled === 0)
+                   @if ($next_train->canceled === 0)
                    <td>No</td> 
                    @else
                    <td>Yes</td> 
                    @endif
-                   <td>{{$todays_train->coaches_nr}}</td>
+                   <td>{{$next_train->coaches_nr}}</td>
+                   <td>{{$next_train->company}}</td>
                </tr>
                    
                @endforeach

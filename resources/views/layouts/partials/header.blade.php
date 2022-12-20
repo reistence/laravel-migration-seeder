@@ -9,8 +9,8 @@
            </h1>
         <ul>
             <li> 
-                <a href="/todaysTrains">
-                Today's Trains
+                <a href="/nextTrains">
+                Next Trains
                 </a>
             </li>
         </ul>

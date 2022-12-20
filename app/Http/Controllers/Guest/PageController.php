@@ -13,8 +13,8 @@ class PageController extends Controller
          return view('home', compact('trains'));
     }
 
-    public function showToday(){
-        $today_trains = Train::where('departures_schedule', '>=',now())->get();
-        return view('todaysTrains', compact('today_trains'));
+    public function showNext(){
+        $next_trains = Train::where('departures_schedule', '>=',now())->get();
+        return view('nextTrains', compact('next_trains'));
     }
 }

@@ -15,6 +15,7 @@
                    <th>On Time</th>
                    <th>Canceled</th>
                    <th>Coaches</th>
+                   <th>Company</th>
                </tr>
            </thead>
            <tbody>
@@ -36,6 +37,8 @@
                    <td>Yes</td> 
                    @endif
                    <td>{{$train->coaches_nr}}</td>
+                   <td>{{$train->company}}</td>
+
                </tr>
                    
                @endforeach
