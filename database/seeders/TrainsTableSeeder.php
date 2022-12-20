@@ -6,6 +6,8 @@ use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
 
 class TrainsTableSeeder extends Seeder
 {
@@ -18,9 +20,9 @@ class TrainsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 15; $i++){
             $train = new Train();
-            $train->company = $faker->word();
-            $train->departure_station = $faker->words(3, true);
-            $train->arrival_station = $faker->words(3, true);
+            $train->company = Str::of($faker->word())->ucfirst();
+            $train->departure_station = Str::of($faker->words(3, true))->ucfirst() ;
+            $train->arrival_station = Str::of($faker->words(3, true))->ucfirst();
             $train->departures_schedule = $faker->dateTimeBetween('-1 week', '+1 week');
             $train->arrivals_schedule = $faker->dateTimeBetween('-1 week', '+1 week');
             $train->train_code = $faker->numberBetween(9000, 9999);

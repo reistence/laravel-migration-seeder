@@ -6,6 +6,8 @@ use App\Functions\Helpers;
 use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
 
 class TrainsTableSeederCsv extends Seeder
 {
@@ -20,9 +22,9 @@ class TrainsTableSeederCsv extends Seeder
         foreach($trainsData as $key => $train){
             if( $key !== 0){
                 $newTrain = new Train();
-                $newTrain->company = $train[0];
-                $newTrain->departure_station = $train[1];
-                $newTrain->arrival_station = $train[2];
+                $newTrain->company = Str::of($train[0])->ucfirst();
+                $newTrain->departure_station = Str::of($train[1])->ucfirst();
+                $newTrain->arrival_station = Str::of($train[2])->ucfirst();
                 $newTrain->departures_schedule = $train[3];
                 $newTrain->arrivals_schedule = $train[4];
                 $newTrain->train_code = $train[5];
