@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('arrival_station', 80);
             $table->dateTime('departures_schedule')->format('hh:mm');
             $table->dateTime('arrivals_schedule');
-            $table->integer('train_code')->unsigned();
+            $table->string('train_code');
             $table->integer('coaches_nr')->unsigned();
             $table->tinyInteger('on_schedule')->unsigned()->default(1);
             $table->tinyInteger('canceled')->unsigned()->default(0);

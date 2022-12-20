@@ -14,9 +14,7 @@ class PageController extends Controller
     }
 
     public function showToday(){
-        $today_trains = Train::where([['departures_schedule', '>=','2022-12-19 00:00:00'],
-                                ['departures_schedule', '<=','2022-12-19 23:59:59'],
-                                ])->get();
+        $today_trains = Train::where('departures_schedule', '>=',now())->get();
         return view('todaysTrains', compact('today_trains'));
     }
 }
